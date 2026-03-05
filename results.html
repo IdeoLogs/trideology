@@ -51,7 +51,7 @@
     
                 var dot = c.getContext("2d");
                 dot.beginPath();
-                dot.arc((sidea ** 2)/10, (sideb ** 2)/10, 25, 0, 2 * Math.PI);
+                dot.arc((sidea ** 2) + 50, (sideb ** 2) + 50, 25, 0, 2 * Math.PI);
                 dot.fillStyle = 'red';
                 dot.fill();
                 dot.stroke();
