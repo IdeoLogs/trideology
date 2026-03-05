@@ -35,7 +35,7 @@
         com_axis  = parseFloat(urlParams.get("com"))
         
         xaxis = (lib_axis/2) - (com_axis/2)
-        yaxis = pat_axis
+        yaxis = pat_axis - (lib_axis/2) - (com_axis/2)
         c = 10
     
         window.onload = function() {
