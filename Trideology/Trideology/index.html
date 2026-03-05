@@ -1,0 +1,74 @@
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99715444-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-99715444-7');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <title>Essence Sort</title>
+    <link rel="icon" type="x-icon" href="icon.png">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <img src="essence-test.png" class="center">
+    <svg id="svgHeader" style="width: 100%;" viewBox="0 0 112 19">
+		<text x="50%" y="15" class="svgHeader">Essence Sort</text>
+	</svg>
+    <hr>
+    <img src="" id="banner">
+    <button class="button" onclick="location.href='instructions.html';">Click here to start!</button>
+
+    <h2>What is Essence Sort?</h2>
+        <p>Essence Sort is a test designed for the world of Naalsem, to see what essence type you might embody. Don't take it too seriously, it's more like a game. <br><br>
+        This test uses the <a href="https://sapplyvalues.github.io/">SapplyValues UI</a>
+        There are <b><u><span id="numOfQuestions"></span></u></b> questions in the test.</p>
+  <h2>What do my results mean?</h2>
+        <p>In the world of Naalsem, there are four essential types which everything is made of. Red is the body, blue is the mind, yellow is the soul, and purple is the will. Each person has all four essence types, but depending on your individual traits you have an "essential affinity," which is the type you embody most. There is also a "light vs dark" score which is how aligned you are with light essence, which is complimentary to your type. You cannot be "light essence affinity," but would rather be "light blue" or "dark yellow." You can find a longer explanation <a href="https://www.youtube.com/watch?v=Sdkhspd69ic&ab_channel=CourtTutor">here</a>, but a brief explanation of each type is below.
+        <br><br>
+        <b>Red essence </b> is what makes up matter, the material world. Your flesh, organs, and bones are made from red essence. Those with an affinity for red essence are very physically oriented, and hot-blooded. They often desire a code or leader to guide them, and tend to be very loyal. When trained, these individuals can hone their bodies to an incredibly degree and even impart their strength into objects or people. 
+        <br><br>
+        <b>Purple essence</b> is force, and will. When you move your body or desire something, that's your purple essence. Those with an affinity for purple essence are strong-willed and charismatic, with a tendancy towards leadership. People with this affinity can develop control over natural forces like fire, wind, or lightning or directly impart their will on the people and world around them. 
+        <br><br>
+        <b>Blue essence</b> is information. Your mind, memories, and DNA are all written with blue essence. Those with an affinity for blue essence are intellectual and introspective, spending most of their time in their own head. Blue affinities can divine things unknown to others, or even alter the fabric of time and space. 
+        <br><br>
+        <b>Yellow essence</b> is the connection between things. The delicate homeostasis which keeps your body alive as well as your senses are regulated by yellow essence. Those with an affinity for yellow essence are perceptive and in-tune with the world around them. They can connect with divine beings for guidance, restore health to those who need it, or bring balance to turbulent souls. 
+        <br><br>
+        <b>Light essence</b> is the centrality of being, the singularity. Those who are drawn towards light essence often feel called to a higher purpose, and believe that there is only one ultimate truth. 
+        <br><br>
+        <b>Dark essence</b> is the absence of light, the infinite multitude. People associated with darkness believe that the world is chaotic, and it is up to us to create our own meaning. They tend to believe that the answers will be different for everybody. 
+        <br><br>
+    <h2>Legal notice</h2>
+    <p>Copyright (C) 2017-2019 8values</p>
+    <p>Copyright (C) 2020-2021 SapplyValues</p>
+    <p>8values, 9axes, and SapplyValues are licensed under the Expat/MIT license. You can find a copy of the license <a href="LICENSE">here</a> or on the <a href="https://github.com/SapplyValues/SapplyValues.github.io/blob/master/LICENSE">GitHub repo</a>.</p>
+
+    <script type="application/javascript" src="questions.js"></script>
+    <script type="text/javascript">
+        document.getElementById("numOfQuestions").innerHTML = questions.length;
+
+        window.onload = function() {
+            var background = new Image();
+            background.onload = function() {
+                var c = document.createElement("canvas");
+                c.width = 1850;
+                c.height = 1300;
+                var ctx = c.getContext("2d");
+                ctx.fillStyle = "#EEEEEE"
+                ctx.fillRect(0, 0, 1850, 1300);
+                ctx.drawImage(background, 0, 0);
+
+                document.getElementById("banner").src = c.toDataURL();
+            }
+            background.src = "./compass.png";
+        }
+    </script>
+</body>

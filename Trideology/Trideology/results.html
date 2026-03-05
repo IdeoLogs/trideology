@@ -1,0 +1,72 @@
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99715444-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-99715444-7');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <title>Essence Sort Results</title>
+    <link rel="icon" type="x-icon" href="icon.png">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+    <img src="essence-test.png" class="center">
+    <hr>
+
+    
+    <img src="" id="banner"></canvas></br>
+    <p style="text-align:center;margin:-2px auto">Hint: you can download this image directly. No need to screenshot!</p></br>
+    <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
+	
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        lib_axis  = parseFloat(urlParams.get("lib"))
+        pat_axis  = parseFloat(urlParams.get("pat"))
+        com_axis  = parseFloat(urlParams.get("com"))
+        
+        sidea = lib_axis + pat_axis - com_axis
+        sideb = pat_axis + com_axis - lib_axis
+        c = 10
+    
+        window.onload = function() {
+            var background = new Image();
+            background.onload = function() {
+                var c = document.createElement("canvas");
+                c.width = 1850;
+                c.height = 1600;
+                var ctx = c.getContext("2d");
+                ctx.fillStyle = "#EEEEEE"
+                ctx.fillRect(0, 0, 1850, 1600);
+                ctx.drawImage(background, 0, 0);
+    
+                var dot = c.getContext("2d");
+                dot.beginPath();
+                dot.arc((sidea ** 2)/10, (sideb ** 2)/10, 25, 0, 2 * Math.PI);
+                dot.fillStyle = 'red';
+                dot.fill();
+                dot.stroke();
+
+    
+                ctx.font="50px Montserrat"
+                ctx.textAlign="center"
+                ctx.fillStyle="#222222"
+                ctx.textAlign="right"
+                ctx.font="60px Montserrat"
+    
+                document.getElementById("banner").src = c.toDataURL();
+            }
+            background.src = "./compass.png";
+        }
+        </script>
+    </body>
+    
