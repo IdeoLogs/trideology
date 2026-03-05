@@ -34,8 +34,8 @@
         pat_axis  = parseFloat(urlParams.get("pat"))
         com_axis  = parseFloat(urlParams.get("com"))
         
-        xaxis = ((lib_axis) - (com_axis)) / (pat_axis/10)
-        yaxis = -pat_axis/(lib_axis + com_axis)
+        xaxis = (lib_axis - com_axis) / (pat_axis)
+        yaxis = pat_axis
         c = 10
     
         window.onload = function() {
@@ -51,7 +51,7 @@
     
                 var dot = c.getContext("2d");
                 dot.beginPath();
-                dot.arc(xaxis + 700, yaxis + 650, 25, 0, 2 * Math.PI);
+                dot.arc(xaxis + 700, yaxis + 1000, 25, 0, 2 * Math.PI);
                 dot.fillStyle = 'red';
                 dot.fill();
                 dot.stroke();
