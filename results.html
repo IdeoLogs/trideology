@@ -34,8 +34,8 @@
         pat_axis  = parseFloat(urlParams.get("pat"))
         com_axis  = parseFloat(urlParams.get("com"))
         
-        xaxis = (0.5 * lib_axis) - (0.5 * com_axis)
-        yaxis = pat_axis - (((0.5) * com_axis) + ((0.5) * lib_axis))
+        xaxis = (lib_axis/2) - (com_axis/2)
+        yaxis = pat_axis - ((com_axis/2) + (lib_axis/2))
         c = 10
     
         window.onload = function() {
