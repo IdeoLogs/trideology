@@ -34,7 +34,7 @@
         pat_axis  = parseFloat(urlParams.get("pat"))
         com_axis  = parseFloat(urlParams.get("com"))
         
-        xaxis = ((lib_axis) - (com_axis)) / pat_axis
+        xaxis = ((lib_axis) - (com_axis)) / (pat_axis/10)
         yaxis = -pat_axis/(lib_axis + com_axis)
         c = 10
     
